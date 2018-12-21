@@ -1,0 +1,148 @@
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="msapplication-tap-highlight" content="no">
+      <meta name="description" content="MyCollegeBus is a Web application for college bus routes management ">
+      <title>Campus news</title>
+      <!-- Favicons-->
+      <meta name="msapplication-TileColor" content="#FFFFFF">
+      <link rel="icon" href="images/1335923.png" sizes="32x32">
+      <!--  Android 5 Chrome Color-->
+      <meta name="theme-color" content="#EE6E73">
+      <!-- CSS-->
+      <link href="assets/css/prism.css" rel="stylesheet">
+      <link href="assets/css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+      <link href="assets/css/css.css" rel="stylesheet" type="text/css">
+      <link href="assets/css/icon.css" rel="stylesheet">
+       <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+
+     
+        
+         <script src="assets/js/jquery-3.2.1.slim.min.js" ></script>
+               <style>
+               .content{
+                font-size: 1.0em;
+               }
+         .menu {
+         background-color: #2CB3CD;
+         padding: 10px;
+         }
+       
+         .cards{
+         background-image: url(http://www.pptbackgrounds.org/uploads/green-color-texture-backgrounds-wallpapers.jpg)
+         }
+          .date{
+              color: darkgray;
+              font-size: 0.7em;
+              list-style: none;
+              
+          }
+          .sider{
+          color:#ffffff;
+          }
+      </style>
+   </head>
+   <body>
+  
+  <% include sidebar %>
+
+
+  <% include main %>
+  <% include articles %>
+  <% include circular %>
+  <% include drive %>
+  <% include exam %>
+  <% include noticeboard %>
+  <% include seminars %>
+  <% include skills %> 
+    <% include events %> 
+    <% include gallery %>   
+  <% include footer %>
+  <% include floating-button %>
+  <% include modal_article %>
+  <% include modal_venue %>
+ 
+                                        
+                                       
+        
+      <!--  Scripts-->
+      <script>
+function opentab(evt, tabname) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabname).style.display = "block";
+  evt.currentTarget.tabname += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<script>
+$('.trainings_venue').click(function() {
+      var id = $(this).val();
+      alert(id);
+      $.post('/trainings_venue', {
+      sno: id
+      }, function(data, xhr) {
+      var jsondata = JSON.stringify(data);
+      var data1 = JSON.parse(jsondata);
+
+      
+      $clg= data1[0].college;
+      $block= data1[0].bhavan;
+      $floor= data1[0].floor;
+      $lab= data1[0].lab;
+      $roomno= data1[0].roomno;
+      document.getElementById("clg").innerHTML = $clg;
+      document.getElementById("block").innerHTML = $block;
+      document.getElementById("floor").innerHTML = $floor;
+      document.getElementById("lab").innerHTML = $lab;
+      document.getElementById("roomno").innerHTML = $roomno;
+      });
+      });
+          $('.trainer').click(function() {
+      var id = $(this).val();
+      alert(id);
+      $.post('/trainer', {
+      sno: id
+      }, function(data, xhr) {
+      var jsondata = JSON.stringify(data);
+      var data1 = JSON.parse(jsondata);
+    
+      document.getElementById("trainername").innerHTML ="<b>Trainer name</b>" + data1[0].name;
+      document.getElementById("contact").innerHTML ="<b>Contact :</b>" + data1[0].contact;
+  
+      document.getElementById("areas").innerHTML ="<b>Areas :</b>" + data1[0].areas;
+   
+      document.getElementById("image").src = data1[0].image; 
+      document.getElementById("register").href = data1[0].register;
+
+      });
+      });
+
+    </script>
+      <script src="assets/js/jquery-3.2.1.min.js"></script>
+      <script src="assets/js/jquery.timeago.min.js"></script>
+     <script src="assets/js/prism.js"></script>
+      <script src="assets/js/lunr.min.js"></script>
+      <script src="assets/js/search.js"></script>
+      <script src="assets/js/materialize.js"></script>
+      <script src="assets/js/init.js"></script>
+   </body>
+</html>
+
+
+
+ 

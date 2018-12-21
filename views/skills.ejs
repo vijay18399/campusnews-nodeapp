@@ -1,0 +1,36 @@
+ <main id="tab2" class="tabcontent">
+         <div class="row cards" >
+            <div class="col grid-example s12 "><span class="flow-text">Trainings & Workshops</span></div>
+               <% trainings.forEach(function(training) { %>     
+      
+           <div class="col s12 m4 l4">
+               <div class="card">
+                  <div class="card-image">
+                     <img src="images/graphics_6.png" height="200px">
+                  </div>
+                  <div class="card-content">
+                     <span class="card-title"><%= training.name %></span>
+                     <ul class="collection with-header">
+                        <li class="hide collection-item">id:<%= training._id %></li>
+                        <li class="hide collection-item">trainerid:<%= training.trainerid %></li>
+                        <li class="collection-item">Conducted by: <%= training.conducted_by %></li>
+                        <li class="collection-item">Timings : Fullday</li>
+                        <li class="collection-item">date:<%= training.date %></li>
+                        <li class="collection-item">price:<%= training.price %></li>
+                        
+                     </ul>
+                  </div>
+                  <div class="card-action center">
+                       <button   class="btn blue modal-trigger trainer" href="#trainer" value=<%= training.trainerid %> >trainer</button>
+          
+                     <button   class="btn blue modal-trigger trainings_venue" href="#venue" value=<%= training._id %> >venue</button>
+          
+                         
+                  </div>
+               </div>
+                  
+            </div>
+     <% }); %> 
+                        <% include modal_trainer %>
+         </div>
+      </main>

@@ -1,0 +1,19 @@
+      <main id="tab3" class="tabcontent">
+         <div class="row cards" >
+            <div class="col grid-example s12 #aa00ff purple accent-4 "><span class="flow-text">Circular</span></div>
+          
+         <div class="row">
+           <% circulars.forEach(function(circular) { %> 
+    <div class="col s12 m4"> 
+        
+      <div class="card-panel ">
+          <img class="materialboxed" data-caption="A picture of a way with a group of trees in a park" width="250" src="<%= circular.image %>">
+          <span class="purple-text"><%= circular.circular %>  </span><span class="date"> (<%= circular.date %> )
+        </span>
+      </div>
+    </div>
+           <% }); %>       
+
+     </div>
+         </div>
+      </main>

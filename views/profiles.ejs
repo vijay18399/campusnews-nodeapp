@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <style>
+    img{
+      height: 25px;
+      width: 25px;
+    }
+
+  </style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body style="background-color:powderblue;">
+
+​
+
+<h1>This is a heading</h1>
+   <ul>       <% users.forEach(function(user) { %>     
+      <li><%= user.name %> is a <%= user.dp %>.</li> 
+   <!--  <img src="<%= user.dp %>" >-->
+    <% }); %>     </ul> 
+
+
+​
+
+</body>
+
+</html>
+
+​
+
+
+
