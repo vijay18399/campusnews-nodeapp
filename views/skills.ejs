@@ -1,6 +1,7 @@
 <main id="tab2" class="tabcontent">
  <div class="row cards" >
             <div class="col grid-example s12 "><span class="flow-text">Trainings & Workshops</span></div>
+             <% trainings.forEach(function(training) { %>
            <div class="col s12 m4 l4">
                <div class="card">
                   <div class="card-image">
@@ -9,20 +10,25 @@
                   <div class="card-content">
                      <span class="card-title">Mean Stack</span>
                      <ul class="collection with-header">
-                        <li class="collection-item">Conducted by: T-Hub</li>
-                        <li class="collection-item">Timings : Fullday</li>
-                        <li class="collection-item">date:22/12/2012</li>
-                        <li class="collection-item">price:1200</li>
+                        <li class="collection-item">Conducted by: <%= training.conducted_by %></li>
+                        <li class="collection-item hide">Timings : <%= training.trainerid %></li>
+                         <li class="collection-item hide">Timings : <%= training._id %></li>
+
+                        <li class="collection-item">date:<%= training.date %></li>
+                        <li class="collection-item">price:<%= training.price %></li>
                      </ul>
                   </div>
                   <div class="card-action center">
-                     <a class="btn blue modal-trigger" href="#trainer">trainer info</a>
-                     <a class="btn blue modal-trigger" href="#venue">venue</a>
-                             <% include modal_trainer %>
+                     <button   class="btn blue modal-trigger trainer" href="#trainer" value=<%= training.trainerid %> >trainer</button>
+          
+                     <button   class="btn blue modal-trigger trainings_venue" href="#venue" value=<%= training._id %> >venue</button>
+                             
 
                   </div>
                </div>
             </div>
-     
+     <% }); %>
+     <% include modal_trainer %>
          </div>
 </main>
+                         
