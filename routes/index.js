@@ -14,15 +14,14 @@ router.get('/user', function(req, res) {
  });
 router.get('/', function(req, res) { 
 		trainings.find({},{}, function(e, docs){    
-		 res.render('index', {     
+            console.log(docs);
+		 res.render('index', {   
+               
 			     'trainings': docs  
+
 		   });  
 	 }); 
-                circular.find({},{}, function(e, docs){    
-         res.render('index', {     
-                 'circulars': docs  
-           });  
-     }); 
+             
  
  });
 router.post('/trainings_venue', function(req, res) {
