@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Campus News</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/admin.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div id="wrapper" class="animate">
+    <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <span class="navbar-toggler-icon leftmenutrigger"></span>
+      <a class="navbar-brand" href="#">Admin Panel</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav animate side-nav">
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-table "></i> Data Tables <i class="fas fa-table  shortmenu animate"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Trainings & Workshops</a>
+          <a class="dropdown-item" href="#">Circular</a>
+         <a class="dropdown-item" href="#">Campus Drive</a>
+          <a class="dropdown-item" href="#">Articles</a>
+          <a class="dropdown-item" href="#">Events</a>
+         <a class="dropdown-item" href="#">Gallery</a>
+          <a class="dropdown-item" href="#">Exam</a>
+        </div>
+      </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" title="Cart"><i class="fas fa-briefcase"></i> Counters <i class="fas fa-briefcase shortmenu animate"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" title="Comment"><i class="fas fa-comment"></i> Comments<i class="fa fa-comment shortmenu animate"></i></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-md-auto d-md-flex">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-key"></i> Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<% include datatables %>
+
+              <div class="line"></div>
+          
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script type="text/javascript" src="
+    https://code.jquery.com/jquery-3.3.1.js
+"></script>
+<script type="text/javascript " src=" https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+  $('.leftmenutrigger').on('click', function (e) {
+    $('.side-nav').toggleClass("open");
+    $('#wrapper').toggleClass("open");
+    e.preventDefault();
+  });
+});
+$(document).ready(function() {
+    $('table.display').DataTable();
+} );
+$(function(){
+   $('[role=dialog]')
+       .on('show.bs.modal', function(e) {
+          $(this)
+              .find('[role=document]')
+                  .removeClass()
+                  .addClass('modal-dialog ' + $(e.relatedTarget).data('ui-class'))
+   })
+})
+</script>
+</body>
+</html>

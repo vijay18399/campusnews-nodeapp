@@ -6,24 +6,40 @@ var db = monk('localhost:27017/clgnews');
 var trainings=db.get('trainings');
 var trainers=db.get('trainers');
 var circular=db.get('circular');
-var notice=db.get('notice');
+var articles=db.get('articles');
 router.get('/user', function(req, res) { 
 	 
 	     
 		 res.render('admin');
  });
-router.get('/', function(req, res) { 
-		trainings.find({},{}, function(e, docs){    
-            console.log(docs);
-		 res.render('index', {   
-               
-			     'trainings': docs  
-
-		   });  
-	 }); 
-             
- 
+router.get('/adminpanel', function(req, res) { 
+     
+         
+         res.render('adminpanel');
  });
+router.get('/', function(req, res) { 
+		trainings.find({},{}, function(e, trainings){ 
+                  
+              console.log(trainings);
+            articles.find({},{}, function(e, docs){  
+console.log(docs);
+
+       res.render('index', {   
+
+                 'articles': docs, 
+            'trainings': trainings
+
+
+           }); 
+		   });  
+	  
+           }); 
+          
+          
+     }); 
+           
+ 
+
 router.post('/trainings_venue', function(req, res) {
     console.log(req.body.sno);
     var id = req.body.sno;

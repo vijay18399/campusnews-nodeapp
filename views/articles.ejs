@@ -17,16 +17,17 @@
     </div>
    
     <div id="tech" class="col s12">
+    <% articles.forEach(function(article) { %>
          <div class="col s12 m4">
     
     <div class="card horizontal">
       <div class="card-image">
-        <img src="images/m1xhas10144zk8tfp6ad_400x400.png" width="100px" height="230px" >
+        <img src="<%= article.image %>" width="100px" height="230px" >
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p >Be aware of False news in Whatsapp.</p>
-            <li class="collection-item date  right">Published on 21/12/2018</li>
+          <p ><%= article.title %></p>
+            <li class="collection-item date  right">Published on <%= article.date %></li>
         </div>
         <div class="card-action center">
           <a class="btn blue modal-trigger" href="#modal">view </a>
@@ -36,13 +37,15 @@
     </div>
   </div>
                 
-         
+          <% }); %>   
          
          
          
          </div>
     
-    <div id="articles" class="col s12">            <div class="col s12 m4">
+    <div id="articles" class="col s12">   
+            
+     <div class="col s12 m4">
     
     <div class="card horizontal">
       <div class="card-image">
