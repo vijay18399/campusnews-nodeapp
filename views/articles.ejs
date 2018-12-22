@@ -43,21 +43,18 @@
          
          </div>
     
-    <div id="articles" class="col s12">   
-            
-     <div class="col s12 m4">
+    <div id="articles" class="col s12">
+ <% techs.forEach(function(tech) { %>
+         <div class="col s12 m4">
     
     <div class="card horizontal">
       <div class="card-image">
-        <img src="images/2018-09-11-ts3_thumbs-e55-small.jpg" width="100px" height="230px" >
+        <img src="<%= tech.image %>" width="100px" height="230px" >
       </div>
       <div class="card-stacked">
         <div class="card-content">
-           
-                  <p >Pubg next generation emotion</p>
-            <li class="collection-item date  ">Published on 21/12/2018</li>
-                             
-         
+          <p ><%= tech.title %></p>
+            <li class="collection-item date  right">Published on <%= tech.date %></li>
         </div>
         <div class="card-action center">
           <a class="btn blue modal-trigger" href="#modal">view </a>
@@ -65,7 +62,11 @@
         </div>
       </div>
     </div>
-  </div></div>
+  </div>
+                
+          <% }); %>   
+         
+         </div>
          
   </div>
      </div>
