@@ -10,11 +10,16 @@ var eventgallery=db.get('eventgallery');
 var placedcandidates=db.get('placedcandidates');
 var cdrive=db.get('cdrive');
 var exam=db.get('exam');
-var techs=db.get('techbit');
+var techs=db.get('articles');
 var articles=db.get('articles');
 var trainers=db.get('trainers');
 var slider=db.get('slider');
-var notice=db.get('notice');
+var faculty=db.get('notice');
+var students=db.get('notice');
+var holidays=db.get('notice');
+var competitions=db.get('notice');
+
+
 var circular=db.get('circular');
 router.get('/user', function(req, res) { 
 	 
@@ -26,31 +31,40 @@ router.get('/adminpanel', function(req, res) {
          
          res.render('adminpanel');
  });
+
 router.get('/', function(req, res) { 
-		trainings.find({},{}, function(e, trainings){ 
-            articles.find({},{}, function(e, articles){ 
-             techs.find({},{}, function(e, techs){  
-           cdrive.find({},{}, function(e, cdrive){
-            circular.find({},{}, function(e, circular){
-                exam.find({},{}, function(e, exam){
-           seminars.find({},{}, function(e, seminars){
-                notice.find({},{}, function(e, notice){
+		trainings.find({}, function(e, trainings){ 
+           articles.find({"type": false}, function(e, articles){ 
+               console.log(articles);
+             techs.find({"type": true}, function(e, techs){  
+                  console.log(techs);
+           cdrive.find({}, function(e, cdrive){
+            circular.find({}, function(e, circulars){
+                exam.find({}, function(e, exam){
+           seminars.find({}, function(e, seminars){
+                students.find({"type": "Mr"}, function(e, students){
+                  faculty.find({"type": "Honorable"}, function(e, faculty){
+                    holidays.find({"type": "Dr"}, function(e, holidays){
+                      competitions.find({"type": "Rev"}, function(e, competitions){
        res.render('index', {   
 
                  'articles': articles, 
             
             'trainings': trainings,
             'cdrive':cdrive,
-            'circular':circular,
+            'circulars':circulars,
              'exam':exam,
              
              'techs':techs,
-             'notice':notice
+             'students':students,
+             'faculty':faculty,
+             'holidays':holidays,
+             'competitions':competitions
 
            }); 
 
 
-        }); }); }); }); }); }); }); 
+        }); }); }); }); }); }); }); }); }); });
  });  });
            
  
@@ -59,6 +73,15 @@ router.post('/trainings_venue', function(req, res) {
     console.log(req.body.sno);
     var id = req.body.sno;
     trainings.find({"_id":id}, function(err,docs){
+        console.log(docs);
+      res.send(docs);
+    });
+
+});
+router.post('/get_articles', function(req, res) {
+    console.log(req.body.sno);
+    var id = req.body.sno;
+    articles.find({"_id":id}, function(err,docs){
         console.log(docs);
       res.send(docs);
     });

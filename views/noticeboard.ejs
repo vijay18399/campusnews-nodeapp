@@ -1,55 +1,94 @@
       <main id="tab4" class="tabcontent">
+       <div class="col center grid-example s12 blue  "><span class="flow-text">Campus News</span></div>
+ 
+         <div class="row cards" >
+            
+  <div class="card-panel">
+    <div class="col grid-example s12 white blue-text"><span class="flow-text">Articles</span></div>
+  </div>
+     <div class="row">
+    <div class="col s12">
+      <ul class="tabs tabs-fixed-width">
+       
+        <li class="tab col s3"><a href="#students">Students</a></li>
+      
+        <li class="tab col s3"><a href="#faculty">Faculty</a></li>
+           <li class="tab col s3"><a class="active" href="#holidays">Holidays</a></li>
+      
+        <li class="tab col s3"><a class="active"  href="#competitions">Competitions</a></li>
+      </ul>
+    </div>
+   
+    <div id="students" class="col s12">
+    <% students.forEach(function(student) { %>
+            <div class="card  m4 s12">
+              <div class="card-image">
+                <img class="materialboxed" height="200px" width="280px" src="<%= student.image %>">
+               
+              </div>
+              <div class="card-content">
+                <p><%= student.title %></p>
+              </div>
+             
+            </div>
+                
+          <% }); %>   
+         
+         
+         
+         </div>
+    
+    <div id="faculty" class="col s12">
+ <% faculty.forEach(function(faculty) { %>
+              <div class="card  m4 s12">
+              <div class="card-image">
+                <img class="materialboxed" height="200px" width="280px" src="<%= faculty.image %>">
+               
+              </div>
+              <div class="card-content">
+                <p><%= faculty.title %></p>
+              </div>
+             
+            </div>
+                
+          <% }); %>   
+         
+         </div>
+             <div id="holidays" class="col s12">
+ <% holidays.forEach(function(holiday) { %>
+    <div class="col  m4 s12 ">
         
-                   <div class="row cards" >
-             <div class="col grid-example s12 #ffa000 amber darken-2 red-text"><span class="flow-text">Appreciation</span></div>
-            <div class="card col m4">
+      <div class="card-panel ">
+          <img class="materialboxed" height="200px" width="180px" src="<%= holiday.image %>" data-caption="<%= holiday.title %>">
+          <span class="purple-text"><%= holiday.title %> </span><span class="date"> (<%= holiday.date %>)
+        </span>
+      </div>
+    </div>
+                
+          <% }); %>   
+         
+         </div>
+             <div id="competitions" class="col s12">
+ <% competitions.forEach(function(competitions) { %>
+                 
+             <div class="card  m4 s12">
               <div class="card-image">
-                <img class="materialboxed" src="images/8x3%20congratulations%20copy.jpg">
+                <img src="<%= competitions.image %>" height="200px" width="280px">
                
               </div>
               <div class="card-content">
-                <p>Congratualation Dr.s.Ramasree  for being awaraded</p>
+                <p><%= competitions.title %></p>
               </div>
-             
+              <div class="card-action center">
+                 <a  class="btn #ff5722 deep-orange " href="<%= competitions.image %>">Register</a>
+              </div>
             </div>
+                
+          <% }); %>   
+         
+         </div>
+         
+  </div>
      </div>
-                             <div class="row cards" >
-             <div class="col grid-example s12 #ff5722 deep-orange"><span class="flow-text">Students Achievements</span></div>
-            <div class="card col m4">
-              <div class="card-image">
-                <img class="materialboxed" src="images/Pratibha_Awards.jpg">
-               
-              </div>
-              <div class="card-content">
-                <p>9 prathibha awards for adityans</p>
-              </div>
-             
-            </div>
-     </div>
-                                  <div class="row cards" >
-             <div class="col grid-example s12 #ff5722 deep-orange"><span class="flow-text">Time Table</span></div>
-            <div class="card col m4">
-              <div class="card-image">
-                <img class="materialboxed" src="images/Pratibha_Awards.jpg">
-               
-              </div>
-              <div class="card-content">
-                <p>9 prathibha awards for adityans</p>
-              </div>
-             
-            </div>
-     </div>
-                                  <div class="row cards" >
-             <div class="col grid-example s12 #ff5722 deep-orange"><span class="flow-text">Holidays</span></div>
-            <div class="card col m4">
-              <div class="card-image">
-                <img class="materialboxed" src="images/Pratibha_Awards.jpg">
-               
-              </div>
-              <div class="card-content">
-                <p>9 prathibha awards for adityans</p>
-              </div>
-             
-            </div>
-     </div>
+  
       </main>

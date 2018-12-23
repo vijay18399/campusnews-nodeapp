@@ -25,6 +25,38 @@
         
          <script src="assets/js/jquery-3.2.1.slim.min.js" ></script>
                <style>
+                   
+                       .strike {
+        display: block;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap; 
+    }
+
+    .strike > span {
+        position: relative;
+        display: inline-block;
+    }
+	
+    .strike > span:before,
+    .strike > span:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 9999px;
+        height: 1px;
+        background: red;
+    }
+
+    .strike > span:before {
+        right: 100%;
+        margin-right: 15px;
+    }
+
+    .strike > span:after {
+        left: 100%;
+        margin-left: 15px;
+    }
                .content{
                 font-size: 1.0em;
                }
@@ -131,7 +163,24 @@ $('.trainings_venue').click(function() {
 
       });
       });
+    $('.article').click(function() {
+      var id = $(this).val();
+      alert(id);
+      $.post('/get_articles', {
+      sno: id
+      }, function(data, xhr) {
+      var jsondata = JSON.stringify(data);
+      var data1 = JSON.parse(jsondata);
 
+      
+      $content= data1[0].content;
+      $title= data1[0].title;
+ 
+      document.getElementById("content").innerHTML = $content;
+      document.getElementById("title").innerHTML = $title;
+     
+      });
+      });
     </script>
       <script src="assets/js/jquery-3.2.1.min.js"></script>
       <script src="assets/js/jquery.timeago.min.js"></script>

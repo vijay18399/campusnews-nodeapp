@@ -1,43 +1,32 @@
-<main id="tab3" class="tabcontent">
-<div class="row cards" >
-             <div class="col grid-example s12 #ff5722 deep-orange"><span class="flow-text">Events</span></div>
-             <div class="card col m4">
-              <div class="card-image">
-                <img class="materialboxed" src="images/valiant-2018112608.jpg">
-               
-              </div>
-              <div class="card-content">
-                <p>Technical and Cultural Festival in Vishnu Institute of Technology located at  Bhimavaram, Andhra Pradesh</p>
-              </div>
-              <div class="card-action center">
-                 <a  class="btn #ff5722 deep-orange " href="#">Register</a>
-              </div>
+ <main id="tab3" class="tabcontent">
+      <div class="col center grid-example s12 blue  "><span class="flow-text">Campus News</span></div>
+ 
+         <div class="row cards" >
+            
+  <div class="card-panel">
+
+<div class="strike">
+    <span>Circular</span>
+</div>
+  </div>
+         <div class="row cards" >
+           
+          
+         <div class="row">
+              <% circulars.forEach(function(circular) { %>
+    <div class="col s12 m4">
+        
+      <div class="card-panel ">
+          <img class="materialboxed" height="400px" width="280px" src="<%= circular.image %>" data-caption="<%= circular.title %>">
+          <span class="purple-text"><%= circular.title %> </span><span class="date"> (<%= circular.date %>)
+        </span>
+      </div>
+    </div>
+            <% }); %>            
+
             </div>
-     </div>
-                   <div class="row cards" >
-             <div class="col grid-example s12 #ff5722 deep-orange"><span class="flow-text">Apreciation</span></div>
-            <div class="card col m4">
-              <div class="card-image">
-                <img class="materialboxed" src="images/8x3%20congratulations%20copy.jpg">
-               
-              </div>
-              <div class="card-content">
-                <p>Congratualation Dr.s.Ramasree  for being awaraded</p>
-              </div>
-             
-            </div>
-     </div>
-                             <div class="row cards" >
-             <div class="col grid-example s12 #ff5722 deep-orange"><span class="flow-text">Students Achievements</span></div>
-            <div class="card col m4">
-              <div class="card-image">
-                <img class="materialboxed" src="images/Pratibha_Awards.jpg">
-               
-              </div>
-              <div class="card-content">
-                <p>9 prathibha awards for adityans</p>
-              </div>
-             
-            </div>
+     
+         </div>
+   
      </div>
 </main>
