@@ -1,61 +1,28 @@
  <main id="tab10" class="tabcontent">
          <div class="row cards" >
             <div class="col grid-example s12 #82b1ff blue accent-1 "><span class="flow-text">Seminars</span></div>
-             <% seminars.forEach(function(seminar) { %>
+             
                   
+           <div>
+             
+              <ul class="collapsible"><% seminars.forEach(function(seminar) { %>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i><%= seminar.topic %></div>
+      <div class="collapsible-body"><span><ul class="collection">
+      <li class="collection-item"><%= seminar.by %></li>
+      <li class="collection-item"><%= seminar.by %></li>
+      <li class="collection-item"><%= seminar.from %></li>
+      <li class="collection-item"><%= seminar.date %></li>
+       <li class="collection-item"><%= seminar.audience %></li>    
+    </ul></span></div>
+    </li>
+  <% }); %>
+  </ul>
+             
+             </div>
+            
            
-            <table class="white ">
-               <thead class="col l6" >
-                  <tr>
-                     <th>Topic</th>
-                     <td><%= seminar.topic %></td>
-                  </tr>
-                  <tr>
-                     <th>Seminar By</th>
-                     <td><%= seminar.by %> </td>
-                  </tr>
-                  <tr>
-                     <th>Organisation</th>
-                     <td><%= seminar.from %></td>
-                  </tr>
-                  <tr>
-                     <th>date </th>
-                     <td><%= seminar.date %></td>
-                  </tr>
-                  <tr>
-                     <th>audiance</th>
-                     <td><%= seminar.audience %></td>
-                  </tr>
-                
-                  
-               </thead>
-                <thead class="col l6" >
-                  <tr>
-                     <th>College</th>
-                     <td><%= seminar.college %></td>
-                  </tr>
-                  <tr>
-                     <th>Block</th>
-                     <td><%= seminar.block %> </td>
-                  </tr>
-                  <tr>
-                     <th>Floor</th>
-                     <td><%= seminar.floor %></td>
-                  </tr>
-                  <tr>
-                     <th>Room No </th>
-                     <td><%= seminar.roomno %></td>
-                  </tr>
-                  <tr>
-                     <th>Lab</th>
-                     <td><%= seminar.lab %></td>
-                  </tr>
                
-                  
-               </thead>
-            </table>
-            <hr>
-                 <% }); %>
 
          </div>
       </main>
