@@ -1,63 +1,61 @@
  <main id="tab10" class="tabcontent">
          <div class="row cards" >
             <div class="col grid-example s12 #82b1ff blue accent-1 "><span class="flow-text">Seminars</span></div>
-             <div class="col l6 m6 s12 hoverable">
+             <% seminars.forEach(function(seminar) { %>
+                  
+           
             <table class="white ">
-               <thead>
+               <thead class="col l6" >
                   <tr>
                      <th>Topic</th>
-                     <td>Machine Learning</td>
+                     <td><%= seminar.topic %></td>
                   </tr>
                   <tr>
                      <th>Seminar By</th>
-                     <td>Dr.Raja gopal Chari </td>
+                     <td><%= seminar.by %> </td>
                   </tr>
                   <tr>
                      <th>Organisation</th>
-                     <td>BELL Solutions</td>
+                     <td><%= seminar.from %></td>
                   </tr>
                   <tr>
                      <th>date </th>
-                     <td>21/02/2018</td>
+                     <td><%= seminar.date %></td>
                   </tr>
                   <tr>
                      <th>audiance</th>
-                     <td>CSE Faculty Only</td>
+                     <td><%= seminar.audience %></td>
                   </tr>
-                   <tr  >
-                   <th colspan="2" class="center"> <a class="btn blue modal-trigger center" href="#venue">venue</a></th>
-                   </tr>
                 
+                  
                </thead>
-            </table></div>
-                          <div class="col l6 m6 s12 hoverable">
-            <table class="white ">
-               <thead>
+                <thead class="col l6" >
                   <tr>
-                     <th>Topic</th>
-                     <td>Machine Learning</td>
+                     <th>College</th>
+                     <td><%= seminar.college %></td>
                   </tr>
                   <tr>
-                     <th>Seminar By</th>
-                     <td>Dr.Raja gopal Chari </td>
+                     <th>Block</th>
+                     <td><%= seminar.block %> </td>
                   </tr>
                   <tr>
-                     <th>Organisation</th>
-                     <td>BELL Solutions</td>
+                     <th>Floor</th>
+                     <td><%= seminar.floor %></td>
                   </tr>
                   <tr>
-                     <th>date </th>
-                     <td>21/02/2018</td>
+                     <th>Room No </th>
+                     <td><%= seminar.roomno %></td>
                   </tr>
                   <tr>
-                     <th>audiance</th>
-                     <td>CSE Faculty Only</td>
+                     <th>Lab</th>
+                     <td><%= seminar.lab %></td>
                   </tr>
-                   <tr  >
-                   <th colspan="2" class="center"> <a class="btn blue modal-trigger center" href="#venue">venue</a></th>
-                   </tr>
-                
+               
+                  
                </thead>
-            </table></div>
+            </table>
+            <hr>
+                 <% }); %>
+
          </div>
       </main>

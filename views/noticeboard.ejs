@@ -59,7 +59,7 @@
     <div class="col  m4 s12 ">
         
       <div class="card-panel ">
-          <img class="materialboxed" height="200px" width="180px" src="<%= holiday.image %>" data-caption="<%= holiday.title %>">
+          <img class="materialboxed center" height="200px" width="100%" src="<%= holiday.image %>" data-caption="<%= holiday.title %>">
           <span class="purple-text"><%= holiday.title %> </span><span class="date"> (<%= holiday.date %>)
         </span>
       </div>
@@ -69,24 +69,23 @@
          
          </div>
              <div id="competitions" class="col s12">
- <% competitions.forEach(function(competitions) { %>
+ <% competitions.forEach(function(competition) { %>
                  
-             <div class="card  m4 s12">
-              <div class="card-image">
-                <img src="<%= competitions.image %>" height="200px" width="280px">
-               
-              </div>
-              <div class="card-content">
-                <p><%= competitions.title %></p>
-              </div>
-              <div class="card-action center">
-                 <a  class="btn #ff5722 deep-orange " href="<%= competitions.image %>">Register</a>
-              </div>
+             
+    <div class="col  m4 s12 ">
+        
+      <div class="card-panel  ">
+          <img class="materialboxed " height="200px" width="100%" src="<%= competition.image %>" data-caption="<%= competition.title %>">
+          <span class="purple-text"><%= competition.title %> </span><span class="date"> (<%= competition.date %>)
+        </span>
+      </div>
+    </div>
+                
+          <% }); %> 
             </div>
                 
-          <% }); %>   
+       
          
-         </div>
          
   </div>
      </div>

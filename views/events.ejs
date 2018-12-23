@@ -7,19 +7,21 @@
     <div class="col grid-example s12 white blue-text"><span class="flow-text">Events</span></div>
   </div>
          <div class="row cards" >
-            
+             <% events.forEach(function(event) { %>
              <div class="card col m4">
               <div class="card-image">
-                <img class="materialboxed" src="images/valiant-2018112608.jpg">
+                <img class="materialboxed" width="100%" height="150px" src="<%= event.image %>">
                
               </div>
               <div class="card-content">
-                <p>Technical and Cultural Festival in Vishnu Institute of Technology located at  Bhimavaram, Andhra Pradesh</p>
+                  <h6><%= event.title %></h6>
+                <p><%= event.content %></p>
               </div>
               <div class="card-action center">
-                 <a  class="btn #ff5722 deep-orange " href="#">Register</a>
+                 <a  class="btn #ff5722 deep-orange " href="<%= event.url %>">Register</a>
               </div>
             </div>
+               <% }); %>
         </div>
           </div>
       </main>

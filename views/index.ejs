@@ -122,6 +122,28 @@ function opentab(evt, tabname) {
 document.getElementById("defaultOpen").click();
 </script>
 <script>
+$('.seminar_venue').click(function() {
+      var id = $(this).val();
+      alert(id);
+      $.post('/seminar_venue', {
+      sno: id
+      }, function(data, xhr) {
+      var jsondata = JSON.stringify(data);
+      var data1 = JSON.parse(jsondata);
+
+      
+      $clg= data1[0].college;
+      $block= data1[0].bhavan;
+      $floor= data1[0].floor;
+      $lab= data1[0].lab;
+      $roomno= data1[0].roomno;
+      document.getElementById("clg").innerHTML = $clg;
+      document.getElementById("block").innerHTML = $block;
+      document.getElementById("floor").innerHTML = $floor;
+      document.getElementById("lab").innerHTML = $lab;
+      document.getElementById("roomno").innerHTML = $roomno;
+      });
+
 $('.trainings_venue').click(function() {
       var id = $(this).val();
       alert(id);

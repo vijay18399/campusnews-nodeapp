@@ -20,6 +20,7 @@
     </div>
    
     <div id="result" class="col s12">
+         <% rss.forEach(function(rs) { %>
          <div class="col s12 m4">
     
     <div class="card horizontal">
@@ -28,37 +29,24 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p >Btech 3-1 Result is out for R16,R13,R9.</p>
+          <p ><%= rs.course %> <%= rs.year %> <%= rs.for %>   <%= rs.type %>is out now for <%= rs.regulation %> </p>
         </div>
         <div class="card-action center">
-          <a class="btn" href="#">Download </a>
+          <a class="btn" href="<%= rs.file %>">Download </a>
         </div>
       </div>
     </div>
   </div>
-                 <div class="col s12 m4">
-    
-    <div class="card horizontal">
-      <div class="card-image">
-        <img src="images/exam.png" width="100px" height="190px" >
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <p >Btech 3-1 Result is out for R16,R13,R9.</p>
-        </div>
-        <div class="card-action center">
-          <a class="btn" href="#">Download </a>
-        </div>
-      </div>
-    </div>
-  </div>
+          <% }); %>
+
          
          
          
          
          </div>
     
-    <div id="schedule" class="col s12">         <div class="col s12 m4">
+    <div id="schedule" class="col s12">              <% scs.forEach(function(sc) { %>
+         <div class="col s12 m4">
     
     <div class="card horizontal">
       <div class="card-image">
@@ -66,16 +54,17 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p >Btech 3-1 Mid Schedule is out for R16.</p>
+          <p ><%= sc.course %> <%= sc.year %> <%= sc.for %>   <%= sc.type %>is out now for <%= sc.regulation %> </p>
         </div>
         <div class="card-action center">
-          <a class="btn" href="#">Download </a>
+          <a class="btn" href="<%= sc.file %>">Download </a>
         </div>
       </div>
     </div>
-  </div></div>
+  </div>
+          <% }); %>    </div>
          
   </div>
      </div>
-  
+          </div>
       </main>
