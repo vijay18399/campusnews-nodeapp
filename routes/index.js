@@ -9,8 +9,7 @@ var seminars=db.get('seminars');
 var eventgallery=db.get('eventgallery');
 var placedcandidates=db.get('placedcandidates');
 var cdrive=db.get('cdrive');
-var result=db.get('exam');
-var schedule=db.get('exam');
+var exam=db.get('exam');
 var techs=db.get('articles');
 var articles=db.get('articles');
 var trainers=db.get('trainers');
@@ -41,10 +40,7 @@ router.get('/', function(req, res) {
                   console.log(techs);
            cdrive.find({}, function(e, cdrive){
             circular.find({}, function(e, circulars){
-                result.find({"type": "schedule"}, function(e, schedules){
-                     console.log(schedules);
-                schedule.find({"type": "results"}, function(e, results){
-                    console.log(results);
+             exam.find({}, function(e, exams){    
            seminars.find({}, function(e, seminars){
                 students.find({"type": "Mr"}, function(e, students){
                   events.find({}, function(e, events){
@@ -58,19 +54,19 @@ router.get('/', function(req, res) {
             'trainings': trainings,
             'cdrives':cdrive,
             'circulars':circulars,
-             'scs ':schedules,
-            'rss ':results,
+         
                   'events':events,
              'techs':techs,
              'students':students,
              'faculty':faculty,
              'holidays':holidays,
-             'competitions':competitions
+             'competitions':competitions,
+           'exams' :exams
 
            }); 
 
 
-        }); }); }); }); }); }); }); }); }); }); }); });
+        }); }); }); }); }); }); }); }); }); }); });
  });  });
            
  

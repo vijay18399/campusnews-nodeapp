@@ -1,52 +1,17 @@
       <main id="tab11" class="tabcontent">
       <div class="col center grid-example s12 blue  "><span class="flow-text">Campus News</span></div>
  
-         <div class="row cards" >
+         
             
   <div class="card-panel">
     <div class="col grid-example s12 white blue-text"><span class="flow-text">Articles</span></div>
   </div>
          <div class="row cards" >
-            
-  
-     <div class="row">
-    <div class="col s12">
-      <ul class="tabs tabs-fixed-width">
-       
-        <li class="tab col s3"><a class="active" href="#result">Result</a></li>
-      
-        <li class="tab col s3"><a href="#schedule">schedule</a></li>
-      </ul>
-    </div>
-   
-    <div id="result" class="col s12">
-         <% rss.forEach(function(rs) { %>
-         <div class="col s12 m4">
-    
-    <div class="card horizontal">
-      <div class="card-image">
-        <img src="images/exam.png" width="100px" height="190px" >
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <p ><%= rs.course %> <%= rs.year %> <%= rs.for %>   <%= rs.type %>is out now for <%= rs.regulation %> </p>
-        </div>
-        <div class="card-action center">
-          <a class="btn" href="<%= rs.file %>">Download </a>
-        </div>
-      </div>
-    </div>
-  </div>
-          <% }); %>
 
-         
-         
-         
-         
-         </div>
-    
-    <div id="schedule" class="col s12">              <% scs.forEach(function(sc) { %>
-         <div class="col s12 m4">
+      
+    <div  class="col s12">         
+        <% exams.forEach(function(exam) { %>
+        <div class="col s12 m4">
     
     <div class="card horizontal">
       <div class="card-image">
@@ -54,17 +19,17 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p ><%= sc.course %> <%= sc.year %> <%= sc.for %>   <%= sc.type %>is out now for <%= sc.regulation %> </p>
+          <p ><%= exam.course %> <%= exam.year %>   <%= exam.for %><br> <%= exam.type %> is out for <%= exam.regulation %> </p>
         </div>
         <div class="card-action center">
-          <a class="btn" href="<%= sc.file %>">Download </a>
+          <a class="btn" href="<%= exam.file %>">Download </a>
         </div>
       </div>
     </div>
   </div>
-          <% }); %>    </div>
-         
-  </div>
-     </div>
-          </div>
+            <% }); %>  
+             </div>
+                
+             </div>
+ 
       </main>
